@@ -1,0 +1,15 @@
+{
+  "name": "dawnrain",
+  "version": "1.0.0",
+  "description": "A discord bot, specially made for our gaming community server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.13.0"
+  }
+}
