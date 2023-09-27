@@ -3,7 +3,15 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [
+// Not allowed: GatewayIntentBits.GuildMembers,GatewayIntentBits.MessageContent,
+GatewayIntentBits.Guilds,
+GatewayIntentBits.DirectMessages,
+GatewayIntentBits.GuildMessages,
+GatewayIntentBits.GuildMessageReactions,
+GatewayIntentBits.GuildMessageTyping
+
+] });
 
 client.commands = new Collection();
 
@@ -33,7 +41,6 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-
 
 
 
