@@ -8,7 +8,7 @@ const pingTxt = "This is my timed pong!!";
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription(pingTxt),
+		.setDescription('This will set a timed ping'),
 	async execute(interaction) {
 		await interaction.reply('Pong again!');
 		for (let i = 5; i>0; i--){
