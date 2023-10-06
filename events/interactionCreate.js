@@ -1,5 +1,7 @@
 const { Events } = require('discord.js');
 
+//only calls when there is a chat command used, else it returns
+
 module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction) {

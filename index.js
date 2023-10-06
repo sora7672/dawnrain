@@ -1,7 +1,7 @@
 const fs = require('node:fs');
-const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-
+const path = require('node:path');//checking on indexed nodes form node.js
+const { Client, Collection, Events, GatewayIntentBits } = require('discord.js'); // idk why its written like this!
+const { token }= require("./config.json");// in {} cuz json
 
 const client = new Client({ intents: [
 	// Not allowed: GatewayIntentBits.GuildMembers,GatewayIntentBits.MessageContent,
@@ -34,11 +34,11 @@ const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'
 
 for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
-	const event = require(filePath);
-	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args));
+	const happening = require(filePath);
+	if (happening.once) {
+		client.once(happening.name, (...args) => happening.execute(...args));
 	} else {
-		client.on(event.name, (...args) => event.execute(...args));
+		client.on(happening.name, (...args) => happening.execute(...args));
 	}
 }
 
@@ -50,5 +50,5 @@ for (const file of eventFiles) {
 
 
 
-//always the end! xD
+//just the login after everything is done in this file
 client.login(token);
