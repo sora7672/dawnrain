@@ -4,7 +4,10 @@ const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token }= require("./config.json");// in {} cuz json
 
 const client = new Client({ intents: [
-	// Not allowed: GatewayIntentBits.GuildMembers,GatewayIntentBits.MessageContent,
+	//till 100 servers max
+	GatewayIntentBits.GuildMembers,
+	GatewayIntentBits.MessageContent,
+	//end 100 servers
 	GatewayIntentBits.Guilds,
 	GatewayIntentBits.DirectMessages,
 	GatewayIntentBits.GuildMessages,

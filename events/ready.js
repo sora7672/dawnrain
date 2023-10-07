@@ -19,5 +19,5 @@ module.exports = {
 		// status possible: online, idel, dnd, invisible -> DND = do not disturb
 		
 		console.log(`Ready! Logged in as ${client.user.tag}`);
-	},
+	}
 };
